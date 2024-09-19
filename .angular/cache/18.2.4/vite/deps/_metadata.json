@@ -1,0 +1,76 @@
+{
+  "hash": "2c63bb3b",
+  "configHash": "9233f70c",
+  "lockfileHash": "cd91fad2",
+  "browserHash": "3ae4807c",
+  "optimized": {
+    "@angular/common/http": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "470e93cd",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "0f693979",
+      "needsInterop": false
+    },
+    "@angular/forms": {
+      "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
+      "file": "@angular_forms.js",
+      "fileHash": "e789d9bf",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "b802a8db",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "492bc2cc",
+      "needsInterop": false
+    },
+    "rxjs": {
+      "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "300db6af",
+      "needsInterop": false
+    },
+    "tslib": {
+      "src": "../../../../../node_modules/tslib/tslib.es6.mjs",
+      "file": "tslib.js",
+      "fileHash": "bab92ffc",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "9f524214",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-OMT4GEQP": {
+      "file": "chunk-OMT4GEQP.js"
+    },
+    "chunk-MVWB3EVQ": {
+      "file": "chunk-MVWB3EVQ.js"
+    },
+    "chunk-PXVMXE35": {
+      "file": "chunk-PXVMXE35.js"
+    },
+    "chunk-JDIP35NR": {
+      "file": "chunk-JDIP35NR.js"
+    },
+    "chunk-KN5IZJXX": {
+      "file": "chunk-KN5IZJXX.js"
+    },
+    "chunk-XKUCMAFN": {
+      "file": "chunk-XKUCMAFN.js"
+    }
+  }
+}
