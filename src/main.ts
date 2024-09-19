@@ -1,6 +1,8 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { ApplicationConfig } from '@angular/core';
+import { appConfig } from './app/app.config';
 
+// Use `bootstrapApplication` to initialize your Angular app
 bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+  .catch((err: any) => console.error('Error bootstrapping application:', err));

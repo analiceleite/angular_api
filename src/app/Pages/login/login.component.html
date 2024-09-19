@@ -2,7 +2,7 @@
   class="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-600 via-blue-500 to-blue-600"
 >
   <div
-    class="flex max-w-4xl w-full p-12 border border-blue-300 rounded-lg shadow-deep hover:shadow-deep-hover shadow-md bg-white"
+    class="flex max-w-4xl w-full p-12 border border-blue-300 rounded-lg shadow-deep hover:shadow-deep-hover bg-white"
   >
     <!-- Lado Esquerdo: Formulário de Login -->
     <div class="flex-1 mr-6">
@@ -50,7 +50,7 @@
         <button
           (click)="login()"
           type="submit"
-          class="w-full p-2 bg-primary hover:bg-primary-hover text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300 mt-4"
+          class="w-full p-2 bg-primary hover:bg-primary-hover text-white font-bold rounded-lg duration-300 mt-4"
           [disabled]="isLoading"
         >
           {{ isLoading ? "Loading..." : "Login" }}

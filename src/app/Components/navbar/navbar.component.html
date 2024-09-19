@@ -1,55 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar Example</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100">
 
   <!-- Navbar -->
-  <nav class="bg-white shadow-md">
+  <nav class="bg-blue-600 shadow-md">
     <div class="container mx-auto flex items-center justify-between p-4">
       <!-- Logo -->
       <div class="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9-4 9 4M3 7l9 4 9-4M3 17h18" />
-      </svg>
-        <span class="text-2xl font-semibold text-gray-800">E-Shop</span>
+        <img src="images/idea.png" alt="Lamp" class="w-8 h-8">
+        <span class="text-2xl font-semibold text-white">E-Shop</span>
       </div>
 
       <!-- Navigation Links -->
       <div class="hidden md:flex space-x-8">
-        <a href="#" class="text-gray-600 hover:text-gray-800">Home</a>
-        <a href="#" class="text-gray-600 hover:text-gray-800">Products</a>
-        <a href="#" class="text-gray-600 hover:text-gray-800">Categories</a>
-        <a href="#" class="text-gray-600 hover:text-gray-800">About Us</a>
-        <a href="#" class="text-gray-600 hover:text-gray-800">Contact</a>
+        <a href="#home" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Home</a>
+        <a href="#products" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Products</a>
+        <a href="#categories" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Categories</a>
+        <a href="#about" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">About Us</a>
+        <a href="#contact" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Contact</a>
       </div>
 
       <!-- Right Icons -->
       <div class="flex items-center space-x-4">
         <a href="#" class="relative text-gray-600 hover:text-gray-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h18v18H3V3z" />
-          </svg>
+          <img src="images/idea.png" alt="Lamp">
           <!-- Badge Example -->
           <span class="absolute top-0 right-0 inline-flex items-center justify-center w-4 h-4 bg-red-500 text-white text-xs font-semibold rounded-full">3</span>
         </a>
 
         <a href="#" class="text-gray-600 hover:text-gray-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3a2 2 0 012-2h10a2 2 0 012 2v18a2 2 0 01-2 2H7a2 2 0 01-2-2V3z" />
-          </svg>
+          <img src="images/idea.png" alt="Lamp">
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
       <button class="md:hidden text-gray-600 hover:text-gray-800">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
+        <img src="images/idea.png" alt="Lamp">
       </button>
     </div>
   </nav>
@@ -57,13 +51,14 @@
   <!-- Mobile Menu -->
   <div class="md:hidden">
     <div class="flex flex-col items-center py-4">
-      <a href="#" class="block text-gray-600 hover:text-gray-800 py-2">Home</a>
-      <a href="#" class="block text-gray-600 hover:text-gray-800 py-2">Products</a>
-      <a href="#" class="block text-gray-600 hover:text-gray-800 py-2">Categories</a>
-      <a href="#" class="block text-gray-600 hover:text-gray-800 py-2">About Us</a>
-      <a href="#" class="block text-gray-600 hover:text-gray-800 py-2">Contact</a>
+      <a href="#home" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Home</a>
+      <a href="#products" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Products</a>
+      <a href="#categories" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Categories</a>
+      <a href="#about" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">About Us</a>
+      <a href="#contact" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Contact</a>
     </div>
   </div>
 
 </body>
+
 </html>

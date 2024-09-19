@@ -8,8 +8,9 @@ export interface Product {
     rating: number;
     stock: number;
     tags: string[];
+    imageUrl?: string;
   }
-  
+
   export interface ProductsResponse {
     products: Product[];
   }
