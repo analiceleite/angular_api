@@ -34,7 +34,7 @@ export class LoginComponent {
       next: (val: LoginResponse) => {
         this.isLoading = false;
         this.response = val;
-        this.router.navigate(['/home']);
+        this.router.navigate(['/products']);
       },
       error: (err) => {
         this.isLoading = false;
