@@ -1,6 +1,14 @@
-# Aula1
+# E-Shop - Dummy JSON API
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+
+## Deployment 
+The deploy was made using Vercel, access here: https://ecommerce-angular-api.vercel.app/products
+
+## Password Access
+
+* Username: emilys;
+* Password: emilyspass
 
 ## Development server
 

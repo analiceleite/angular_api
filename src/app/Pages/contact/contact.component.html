@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<div class="bg-white py-12">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-blue-700 mb-4">Contact Us</h2>
+    <p class="text-gray-600 mb-6">
+      Have any questions or feedback? We’re here to help! Reach out to us via the form below, or contact us directly at:
+      <br />
+      <a class="text-primary font-semibold" href="mailto:support.eshop.com">support.eshop.com</a> or 
+      <span class="text-primary font-semibold">+123 456 7890</span>.
+    </p>
+
+    <div class="flex items-center justify-center flex-col md:flex-row max-w-4xl mx-auto p-6 border border-blue-300 rounded-lg shadow-lg bg-gray-100">
+      <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-6">
+        <img src="images/contact.png" alt="Contact Illustration" class="max-w-full h-auto rounded-lg" />
+      </div>
+
+      <form class="flex-1 space-y-4">
+        <label for="name" class="block mb-2 font-bold text-blue-700 text-left">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Your Name"
+          class="w-full p-2 mb-4 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+
+        <label for="email" class="block mb-2 font-bold text-blue-700 text-left ">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Your Email"
+          class="w-full p-2 mb-4 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+
+        <label for="message" class="block mb-2 font-bold text-blue-700 text-left">Message</label>
+        <textarea
+          id="message"
+          rows="4"
+          placeholder="Your Message"
+          class="w-full p-2 mb-4 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        ></textarea>
+
+        <button
+          type="submit"
+          class="w-full p-2 bg-primary hover:bg-primary-hover text-white font-bold rounded-lg duration-300"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-blue-700 text-white py-8">
+  <div class="container mx-auto text-center">
+    <h3 class="text-2xl font-bold mb-4">Stay Connected</h3>
+    <p class="mb-6">
+      Follow us on our social media channels for the latest updates.
+    </p>
+
+    <div class="flex justify-center space-x-6 mb-6">
+      <a href="#" class="hover:text-yellow-300 transition-colors duration-300">
+        <img src="images/facebook.png" alt="Facebook" class="w-8 h-8" />
+      </a>
+      <a href="#" class="hover:text-yellow-300 transition-colors duration-300">
+        <img src="images/twitter.png" alt="Twitter" class="w-8 h-8" />
+      </a>
+      <a href="#" class="hover:text-yellow-300 transition-colors duration-300">
+        <img src="images/instagram.png" alt="Instagram" class="w-8 h-8" />
+      </a>
+    </div>
+
+    <p class="mb-2">&copy; 2024 E-Shop. All rights reserved.</p>
+    <p class="text-sm">Privacy Policy | Terms of Service</p>
+  </div>
+</footer>

@@ -11,6 +11,7 @@ import { FooterComponent } from '../../Components/footer/footer.component';
   standalone: true,
   imports: [CommonModule, FooterComponent, NavbarComponent],
   templateUrl: './products.component.html',
+  styleUrls: ['../../font.css'],
 })
 export class ProductsComponent {
   productsService = inject(ProductsService);

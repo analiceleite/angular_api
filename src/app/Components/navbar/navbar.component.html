@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar Example</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
@@ -21,11 +20,10 @@
 
       <!-- Navigation Links -->
       <div class="hidden md:flex space-x-8">
-        <a href="#home" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Home</a>
-        <a href="#products" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Products</a>
-        <a href="#categories" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Categories</a>
-        <a href="#about" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">About Us</a>
-        <a href="#contact" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Contact</a>
+        <a href="/home" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Home</a>
+        <a href="/products" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">Products</a>
+        <a href="/about" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110">About Us</a>
+        <a routerLink="/contact" class="nav-link text-white hover:text-yellow-300 transition-transform duration-300 transform hover:scale-110 cursor-pointer">Contact</a>
       </div>
 
       <!-- Right Icons -->
@@ -47,17 +45,6 @@
       </button>
     </div>
   </nav>
-
-  <!-- Mobile Menu -->
-  <div class="md:hidden">
-    <div class="flex flex-col items-center py-4">
-      <a href="#home" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Home</a>
-      <a href="#products" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Products</a>
-      <a href="#categories" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Categories</a>
-      <a href="#about" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">About Us</a>
-      <a href="#contact" class="nav-link text-gray-600 hover:text-yellow-400 transition-transform duration-300 transform hover:scale-110 py-2">Contact</a>
-    </div>
-  </div>
 
 </body>
 
