@@ -62,6 +62,14 @@ export class ProductsComponent {
     }
   }
 
+  searchByName(event: Event) {
+    const searchTerm = (event.target as HTMLInputElement).value.toLowerCase();
+    
+    this.filteredProducts = this.response.filter(product =>
+      product.title.toLowerCase().includes(searchTerm)
+    );
+  }
+
   addToCart(product: Product) {
     const existingItem = this.cart.find(item => item.product.id === product.id);
     if (existingItem) {
@@ -88,7 +96,6 @@ export class ProductsComponent {
 
   processPayment(event: Event) {
     event.preventDefault();
-    // Display the total value in the alert or process payment here
     alert(`Payment processed! Total Cost: ${this.totalValue}`);
     this.closeCheckoutModal();
   }
@@ -96,4 +103,10 @@ export class ProductsComponent {
   calculateTotalValue() {
     this.totalValue = this.cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
   }
+
+  clearCart() {
+    this.cart = [];
+    this.totalValue = 0; 
+  }
+
 }
