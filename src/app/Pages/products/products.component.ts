@@ -1,97 +1,119 @@
-import { Component, inject } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from '../../Services/products/products.service';
-import { Router } from '@angular/router';
 import { ProductsResponse, Product } from '../../Interfaces/products-response';
 import { NavbarComponent } from '../../Components/navbar/navbar.component';
-import { FooterComponent } from '../../Components/footer/footer.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, FooterComponent, NavbarComponent],
+  imports: [CommonModule, NavbarComponent],
   templateUrl: './products.component.html',
   styleUrls: ['../../font.css'],
 })
 export class ProductsComponent {
-  productsService = inject(ProductsService);
-  router = inject(Router);
 
-  response: Product[] = [];
-  filteredProducts: Product[] = [];
+  constructor(
+    private productsService: ProductsService) { }
+
+  response = signal<Product[]>([]);
+
+  selectedCategory = signal<string>('');
+  searchTerm = signal<string>('');
+
+  filteredProducts = computed(() => {
+    const products = this.response();
+    const category = this.selectedCategory();
+    const term = this.searchTerm();
+
+    console.log('Computed triggered: category=', category, 'term=', term); // Debug log
+
+    let filtered = products;
+
+    if (category) {
+      filtered = filtered.filter(product => product.category === category);
+    }
+
+    if (term) {
+      filtered = filtered.filter(product =>
+        product.title.toLowerCase().includes(term.toLowerCase())
+      );
+    }
+
+    return filtered;
+  });
+
   categories: string[] = [];
-  selectedCategory: string = '';
   errorMessage: string = '';
-  isLoading: boolean = false;
-  totalValue: number = 0;
-  isModalOpen: boolean = false;
-  cart: { product: Product, quantity: number }[] = [];
+  isLoading = signal(false);
+
+  totalValue = computed(() => {
+    return this.cart().reduce((total, item) => total + item.product.price * item.quantity, 0);
+  })
+
+  isModalOpen = signal(false);
+  cart = signal <{ product: Product, quantity: number }[]>([]);
 
   ngOnInit() {
     this.showProducts();
   }
 
   showProducts() {
-    this.isLoading = true;
+    this.isLoading.set(true);
     this.productsService.showProducts().subscribe({
       next: (data: ProductsResponse) => {
-        this.response = data.products;
-        this.filteredProducts = this.response;
+        this.response.set(data.products);
         this.extractCategories();
-        this.isLoading = false;
+        this.isLoading.set(false);
       },
       error: () => {
         this.errorMessage = 'An error occurred while fetching products.';
-        this.isLoading = false;
+        this.isLoading.set(false);
       }
     });
   }
 
   extractCategories() {
-    const allCategories = this.response.map(product => product.category);
+    const allCategories = this.response().map(product => product.category);
     this.categories = Array.from(new Set(allCategories));
   }
 
   filterByCategory(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
-    this.selectedCategory = selectElement.value;
-    if (this.selectedCategory) {
-      this.filteredProducts = this.response.filter(product => product.category === this.selectedCategory);
-    } else {
-      this.filteredProducts = this.response;
-    }
+    this.selectedCategory.set(selectElement.value);
   }
 
   searchByName(event: Event) {
     const searchTerm = (event.target as HTMLInputElement).value.toLowerCase();
-    
-    this.filteredProducts = this.response.filter(product =>
-      product.title.toLowerCase().includes(searchTerm)
-    );
+    this.searchTerm.set(searchTerm);
   }
 
   addToCart(product: Product) {
-    const existingItem = this.cart.find(item => item.product.id === product.id);
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      this.cart.push({ product, quantity: 1 });
-    }
-    this.calculateTotalValue();
+    this.cart.update(currentCart => {
+      const existingItem = currentCart.find(item => item.product.id === product.id);
+      if (existingItem) {
+        return currentCart.map(item =>
+          item.product.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...currentCart, { product, quantity: 1 }];
+      }
+    });
   }
 
   buyNow(product: Product) {
-    this.cart = [{ product, quantity: 1 }];
-    this.calculateTotalValue();
+    this.cart.set([{ product, quantity: 1 }]);
     this.openCheckoutModal();
   }
 
   openCheckoutModal() {
-    this.isModalOpen = true;
+    this.isModalOpen.set(true)
   }
 
   closeCheckoutModal() {
-    this.isModalOpen = false;
+    this.isModalOpen.set(false);
   }
 
   processPayment(event: Event) {
@@ -100,13 +122,7 @@ export class ProductsComponent {
     this.closeCheckoutModal();
   }
 
-  calculateTotalValue() {
-    this.totalValue = this.cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
-  }
-
   clearCart() {
-    this.cart = [];
-    this.totalValue = 0; 
+    this.cart.set([]);
   }
-
 }
