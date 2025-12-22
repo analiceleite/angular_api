@@ -26,8 +26,6 @@ export class ProductsComponent {
     const category = this.selectedCategory();
     const term = this.searchTerm();
 
-    console.log('Computed triggered: category=', category, 'term=', term); // Debug log
-
     let filtered = products;
 
     if (category) {
